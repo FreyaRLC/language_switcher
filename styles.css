@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ultraHeader {
+  display: flex;
+  place-content: space-between;
+  background-color: cadetblue;
+  padding: 40px;
+}
+
+.header {
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+
+.footer {
+  background-color: darkslategrey;
+  font-size: 1.5rem;
+  color: white;
+  padding: 40px;
+  margin-top: auto;
+}
+
+.content {
+  margin: 3rem;
+}
+
+.menu {
+  color: white;
+  font-family: arial;
+  display: flex;
+  height: fit-content;
+  gap: 10px;
+}
