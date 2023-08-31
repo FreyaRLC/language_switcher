@@ -16,20 +16,31 @@ const texts = {
 
 const locale = "da";
 
-initialize();
+document.addEventListener("DOMContentLoaded", initialize);
+
 function initialize() {
+  // Shows the "default" language (set via the locale variable).
   showLang(locale);
+
+  addEventListeners();
 }
 
-document.querySelector("#selectLang").addEventListener("change", updateLang);
+function addEventListeners() {
+  // Adds eventListeners to the options. Note the use of "change" instead of "click".
+  document.querySelector("#selectLang").addEventListener("change", updateLang);
+}
 
 function updateLang() {
+  // Gets the value from the selected dropdown option.
   let selectedLang = document.querySelector("#selectLang").value;
 
   showLang(selectedLang);
 }
 
 function showLang(lang) {
+  /* If the lang parameter equals da the language is set to danish, and vice versa for german/de.
+     Could be done in a more concise manner with use of the ternary operator, but I don't really understand it yet. 
+  */
   if (lang === "da") {
     document.querySelector(texts.da.texts[0].location).textContent =
       texts.da.texts[0].text;
@@ -42,6 +53,8 @@ function showLang(lang) {
       texts.de.texts[1].text;
   }
 
+  // nedenstående udkommenteret da jeg gerne vil forstå det bedre, før jeg bruger det
+
   /*
   const languageTexts = lang === "da" ? texts.da.texts : texts.de.texts;
 
@@ -49,5 +62,3 @@ function showLang(lang) {
   document.querySelector(languageTexts[1].location).textContent = languageTexts[1].text;
 */
 }
-
-// console.log(texts.da.texts[1].text);
